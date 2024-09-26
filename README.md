@@ -25,12 +25,3 @@ npm: Comes with Node.js; check with the command npm -v
 4) Run tests(Execute the unit tests using Jest to ensure everything is working correctly) 
    npx jest
 
-# Project Structure
-LibraryMS/
-├── src/
-│   ├── library.ts        # Core logic of the library management system
-│   └── __tests__/        # Unit test files
-│       └── library.test.ts
-├── package.json          # NPM configuration
-├── tsconfig.json         # TypeScript configuration
-└── README.md             # Project documentation
