@@ -25,3 +25,14 @@ it('should allow borrowing a book from the library', () => {
     expect(book?.status).toBe('borrowed');
 });
 
+
+//Test for returning books
+it('should allow returning a borrowed book to the library', () => {
+    const library = new Library();
+    library.addBook('123456', 'The Great Gatsby', 'F. Scott Fitzgerald', 1925);
+    library.borrowBook('123456');
+    library.returnBook('123456');
+    const book = library.getBook('123456');
+    expect(book?.status).toBe('available');
+});
+  

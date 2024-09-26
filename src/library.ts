@@ -32,5 +32,15 @@ export class Library {
             throw new Error('Book not available');
         }
     }
+
+    //Returning books
+    returnBook(isbn: string): void {
+        const book = this.books[isbn];
+        if (book && book.status === 'borrowed') {
+          book.status = 'available';
+        } else {
+          throw new Error('Book was not borrowed');
+        }
+    }
     
 }
