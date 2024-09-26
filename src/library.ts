@@ -42,5 +42,10 @@ export class Library {
           throw new Error('Book was not borrowed');
         }
     }
+
+    //get available books
+    getAvailableBooks(): Book[] {
+        return Object.values(this.books).filter((book) => book.status === 'available');
+    }
     
 }

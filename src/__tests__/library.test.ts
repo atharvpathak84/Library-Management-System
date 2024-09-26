@@ -35,4 +35,16 @@ it('should allow returning a borrowed book to the library', () => {
     const book = library.getBook('123456');
     expect(book?.status).toBe('available');
 });
+
+//Test for Viewing Available books
+it('should display all available books in the library', () => {
+    const library = new Library();
+    library.addBook('123456', 'The Great Gatsby', 'F. Scott Fitzgerald', 1925);
+    library.addBook('654321', '1984', 'George Orwell', 1949);
+    library.borrowBook('123456');
+    const availableBooks = library.getAvailableBooks();
+    expect(availableBooks.length).toBe(1);
+    expect(availableBooks[0].title).toBe('1984');
+});
+  
   
