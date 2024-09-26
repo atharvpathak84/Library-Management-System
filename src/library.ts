@@ -22,4 +22,15 @@ export class Library {
     getBook(isbn: string): Book | undefined {
         return this.books[isbn];
     }
+
+    //Borrowing books
+    borrowBook(isbn: string): void {
+    const book = this.books[isbn];
+        if (book && book.status === 'available') {
+            book.status = 'borrowed';
+        } else {
+            throw new Error('Book not available');
+        }
+    }
+    
 }
